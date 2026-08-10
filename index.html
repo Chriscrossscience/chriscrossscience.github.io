@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name — Physics Tutor</title>
+<meta name="description" content="Physics tutoring — one-on-one sessions for high school, AP/IB, and college students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1E362D;
+    --chalk: #F3EFE3;
+    --chalk-dim: #C9C2AC;
+    --gold: #E7B94C;
+    --blue: #8FB9C9;
+    --rule: rgba(243,239,227,0.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--chalk);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:640px;
+    margin:0 auto;
+    padding:72px 24px 96px;
+  }
+  h1,h2{font-family:'Fraunces', serif; font-weight:600; line-height:1.2;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--blue);
+    display:block;
+    margin-bottom:14px;
+  }
+
+  /* Photo + intro */
+  .avatar{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    background:#24402F;
+    border:1px solid var(--rule);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    color:var(--chalk-dim);
+    text-align:center;
+    padding:16px;
+    margin-bottom:28px;
+  }
+  h1{font-size:2rem; margin-bottom:8px;}
+  .role{color:var(--chalk-dim); font-size:1.02rem; margin-bottom:36px;}
+
+  /* Sections */
+  section{margin-top:48px; padding-top:48px; border-top:1px solid var(--rule);}
+  section:first-of-type{margin-top:0; padding-top:0; border-top:none;}
+  section h2{font-size:1.3rem; margin-bottom:16px;}
+  section p{color:var(--chalk-dim);}
+
+  /* Contact */
+  .contact-list{list-style:none;}
+  .contact-list li{margin-bottom:10px; font-size:0.98rem;}
+  .contact-list a{color:var(--chalk); text-decoration:none; border-bottom:1px solid var(--rule);}
+  .contact-list a:hover{border-color:var(--gold); color:var(--gold);}
+  .contact-list .label{
+    display:inline-block;
+    width:82px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem;
+    color:var(--blue);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  /* Resources / PDFs */
+  .resource-list{list-style:none;}
+  .resource-item{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:16px;
+    padding:14px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .resource-item:last-child{border-bottom:none;}
+  .resource-item span.title{font-size:0.98rem;}
+  .resource-item a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem;
+    color:var(--gold);
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .resource-item a:hover{text-decoration:underline;}
+
+  footer{
+    margin-top:64px;
+    padding-top:24px;
+    border-top:1px solid var(--rule);
+    font-size:0.82rem;
+    color:var(--chalk-dim);
+  }
+
+  @media (max-width:480px){
+    .wrap{padding:48px 20px 72px;}
+    .resource-item{flex-direction:column; gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="avatar">Your photo here</div>
+  <h1>Your Name</h1>
+  <p class="role">Physics Tutor — High School, AP/IB & College</p>
+
+  <section>
+    <span class="eyebrow">About</span>
+    <p>
+      Write a short bio here — your background (degree, school), how long you've been tutoring, and what subjects or exam boards you cover. Two or three sentences is plenty.
+    </p>
+  </section>
+
+  <section>
+    <span class="eyebrow">Contact</span>
+    <ul class="contact-list">
+      <li><span class="label">Email</span> <a href="mailto:you@example.com">you@example.com</a></li>
+      <li><span class="label">Phone</span> <a href="tel:+10000000000">(000) 000-0000</a></li>
+      <li><span class="label">Booking</span> <a href="#">Book a session</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <span class="eyebrow">Lecture Notes & Materials</span>
+    <ul class="resource-list">
+      <li class="resource-item">
+        <span class="title">Mechanics — Lecture Notes</span>
+        <a href="mechanics-notes.pdf">View PDF →</a>
+      </li>
+      <li class="resource-item">
+        <span class="title">Electricity & Magnetism — Lecture Notes</span>
+        <a href="em-notes.pdf">View PDF →</a>
+      </li>
+      <li class="resource-item">
+        <span class="title">Waves & Optics — Practice Problems</span>
+        <a href="waves-problems.pdf">View PDF →</a>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Your Name
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
