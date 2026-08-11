@@ -3,28 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Spalding — Physics Tutor</title>
+<title>Your Name — Physics Tutor</title>
 <meta name="description" content="Physics tutoring — AP Physics C, full AP Physics exam prep, and undergraduate classical mechanics & astrophysics support.">
 <style>
   :root{
-    --bg: #ffffff;
+    --bg-outer: #ffffff;
+    --bg-frame: #FBF9F4;      /* faint warm tint inside the frame — swap for a background-image below if you prefer */
     --text: #111111;
     --text-dim: #4a4a4a;
     --orange: #E4720A;
-    --orange-soft: #F3D9BC;
     --rule: #e2ddd3;
+    --frame-line: #d8d2c4;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
+  html, body{height:100%;}
   body{
-    background:var(--bg);
+    background:var(--bg-outer);
     color:var(--text);
     font-family:'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, serif;
     line-height:1.35;
   }
-  .wrap{
-    max-width:680px;
+
+  /* ---- Vertical frame lines with faint interior background ---- */
+  .page-frame{
+    max-width:760px;
     margin:0 auto;
-    padding:28px 24px 40px;
+    min-height:100vh;
+    border-left:2px solid var(--frame-line);
+    border-right:2px solid var(--frame-line);
+    background:var(--bg-frame);
+    /* To use an image instead of a flat tint, replace the line above with:
+       background: url('your-background.jpg') center/cover no-repeat;
+       and consider adding a semi-transparent white overlay for readability. */
+  }
+
+  .wrap{
+    padding:28px 28px 40px;
   }
   h1,h2{font-weight:700; line-height:1.2;}
   .eyebrow{
@@ -32,47 +46,60 @@
     letter-spacing:0.14em;
     text-transform:uppercase;
     color:var(--orange);
-    display:flex;
+    display:block;
     margin-bottom:6px;
     font-weight:700;
   }
 
-  /* Photo + intro */
+  /* ---- Hero: photo + about side by side ---- */
+  .hero{
+    display:flex;
+    gap:24px;
+    align-items:flex-start;
+    margin-bottom:16px;
+  }
   .avatar-frame{
-    display:inline-block;
+    flex:0 0 auto;
     border:4px solid var(--orange);
-    padding:4px;
-    margin-bottom:12px;
+    line-height:0; /* removes any inline-image gap */
   }
   .avatar{
-  width:88px;
-  height:88px;
-  background:#f4f1ea;
-  object-fit:cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:0.68rem;
-  color:var(--text-dim);
-  text-align:center;
-  padding:8px;
+    width:160px;
+    height:160px;
+    display:block;
+    object-fit:cover;
+    background:#f4f1ea;
   }
-  h1{font-size:1.5rem; margin-bottom:4px;}
-  .role{color:var(--text-dim); font-size:0.92rem; margin-bottom:14px;}
+  .hero-text{flex:1 1 auto; min-width:0;}
+  h1{font-size:1.5rem; margin-bottom:2px;}
+  .role{color:var(--text-dim); font-size:0.92rem; margin-bottom:10px;}
+  .hero-text p{color:var(--text-dim); font-size:0.9rem;}
 
-  /* Sections */
+  /* ---- Sections ---- */
   section{margin-top:16px; padding-top:16px; border-top:1px solid var(--rule);}
-  section:first-of-type{margin-top:0; padding-top:0; border-top:none;}
   section h2{font-size:1.05rem; margin-bottom:8px;}
   section p{color:var(--text-dim); font-size:0.9rem;}
 
-  /* Services */
+  /* ---- Services ---- */
   .service-list{list-style:none;}
   .service-item{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
     padding:8px 0;
     border-bottom:1px solid var(--rule);
   }
   .service-item:last-child{border-bottom:none;}
+  .service-icon{
+    flex:0 0 auto;
+    width:34px;
+    height:34px;
+    border:1px dashed var(--frame-line);
+    border-radius:4px;
+    background:rgba(228,114,10,0.05);
+    /* Optional: replace this div with <img src="your-icon.png" class="service-icon"> for a real image */
+  }
+  .service-body{flex:1 1 auto;}
   .service-item h3{
     font-size:0.92rem;
     font-weight:700;
@@ -95,7 +122,7 @@
     font-weight:700;
   }
 
-  /* Contact */
+  /* ---- Contact ---- */
   .contact-list{list-style:none;}
   .contact-list li{margin-bottom:4px; font-size:0.88rem;}
   .contact-list a{color:var(--text); text-decoration:none; border-bottom:1px solid var(--orange);}
@@ -110,7 +137,7 @@
     font-weight:700;
   }
 
-  /* Resources / PDFs */
+  /* ---- Resources / PDFs ---- */
   .resource-list{list-style:none;}
   .resource-item{
     display:flex;
@@ -139,86 +166,101 @@
     color:var(--text-dim);
   }
 
-  @media (max-width:480px){
-    .wrap{padding:48px 20px 72px;}
+  @media (max-width:560px){
+    .hero{flex-direction:column; align-items:center; text-align:center;}
+    .avatar{width:130px; height:130px;}
     .resource-item{flex-direction:column; gap:4px;}
   }
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="page-frame">
+  <div class="wrap">
 
-  <div class="avatar-frame">
-  <img src="headshot.jpg" alt="Your Name" class="avatar">
+    <div class="hero">
+      <div class="avatar-frame">
+        <img src="image.jpg" alt="Your Name" class="avatar">
+      </div>
+      <div class="hero-text">
+        <h1>Your Name</h1>
+        <p class="role">Physics Tutor — AP, High School & Undergraduate</p>
+        <p>
+          Write a short bio here — your background (degree, school), how long you've been tutoring, and what makes your teaching approach effective. Two or three sentences is plenty.
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <span class="eyebrow">Services</span>
+      <ul class="service-list">
+        <li class="service-item">
+          <div class="service-icon"></div>
+          <div class="service-body">
+            <span class="service-tag">AP</span>
+            <h3>AP Physics C: Mechanics Support</h3>
+            <p>Targeted help with coursework and exam prep for AP Physics C: Mechanics.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-icon"></div>
+          <div class="service-body">
+            <span class="service-tag">AP</span>
+            <h3>AP Physics C: Electricity &amp; Magnetism Support</h3>
+            <p>Targeted help with coursework and exam prep for AP Physics C: E&amp;M.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-icon"></div>
+          <div class="service-body">
+            <span class="service-tag">Package</span>
+            <h3>Full Course Instruction &amp; Exam Prep — All AP Physics Exams</h3>
+            <p>A complete package covering instruction and exam prep across the full range of AP Physics courses.</p>
+          </div>
+        </li>
+        <li class="service-item">
+          <div class="service-icon"></div>
+          <div class="service-body">
+            <span class="service-tag">Undergrad</span>
+            <h3>Classical Mechanics &amp; Astrophysics (Undergraduate)</h3>
+            <p>Support for undergraduate-level Classical Mechanics, up through senior-level coursework, and Astrophysics.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="eyebrow">Contact</span>
+      <ul class="contact-list">
+        <li><span class="label">Email</span> <a href="mailto:you@example.com">you@example.com</a></li>
+        <li><span class="label">Phone</span> <a href="tel:+10000000000">(000) 000-0000</a></li>
+        <li><span class="label">Booking</span> <a href="#">Book a session</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <span class="eyebrow">Lecture Notes &amp; Materials</span>
+      <ul class="resource-list">
+        <li class="resource-item">
+          <span class="title">Mechanics — Lecture Notes</span>
+          <a href="mechanics-notes.pdf">View PDF →</a>
+        </li>
+        <li class="resource-item">
+          <span class="title">Electricity &amp; Magnetism — Lecture Notes</span>
+          <a href="em-notes.pdf">View PDF →</a>
+        </li>
+        <li class="resource-item">
+          <span class="title">Waves &amp; Optics — Practice Problems</span>
+          <a href="waves-problems.pdf">View PDF →</a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Your Name
+    </footer>
+
   </div>
-  <h1>Your Name</h1>
-  <p class="role">Physics Tutor — AP, High School & Undergraduate</p>
-
-  <section>
-    <span class="eyebrow">About</span>
-    <p>
-      Write a short bio here — your background (degree, school), how long you've been tutoring, and what makes your teaching approach effective. Two or three sentences is plenty.
-    </p>
-  </section>
-
-  <section>
-    <span class="eyebrow">Services</span>
-    <ul class="service-list">
-      <li class="service-item">
-        <span class="service-tag">AP</span>
-        <h3>AP Physics C: Mechanics Support</h3>
-        <p>Targeted help with coursework and exam prep for AP Physics C: Mechanics.</p>
-      </li>
-      <li class="service-item">
-        <span class="service-tag">AP</span>
-        <h3>AP Physics C: Electricity &amp; Magnetism Support</h3>
-        <p>Targeted help with coursework and exam prep for AP Physics C: E&amp;M.</p>
-      </li>
-      <li class="service-item">
-        <span class="service-tag">Package</span>
-        <h3>Full Course Instruction &amp; Exam Prep — All AP Physics Exams</h3>
-        <p>A complete package covering instruction and exam prep across the full range of AP Physics courses.</p>
-      </li>
-      <li class="service-item">
-        <span class="service-tag">Undergrad</span>
-        <h3>Classical Mechanics &amp; Astrophysics (Undergraduate)</h3>
-        <p>Support for undergraduate-level Classical Mechanics, up through senior-level coursework, and Astrophysics.</p>
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <span class="eyebrow">Contact</span>
-    <ul class="contact-list">
-      <li><span class="label">Email</span> <a href="mailto:you@example.com">you@example.com</a></li>
-      <li><span class="label">Phone</span> <a href="tel:+10000000000">(000) 000-0000</a></li>
-      <li><span class="label">Booking</span> <a href="#">Book a session</a></li>
-    </ul>
-  </section>
-
-  <section>
-    <span class="eyebrow">Lecture Notes &amp; Materials</span>
-    <ul class="resource-list">
-      <li class="resource-item">
-        <span class="title">Mechanics — Lecture Notes</span>
-        <a href="mechanics-notes.pdf">View PDF →</a>
-      </li>
-      <li class="resource-item">
-        <span class="title">Electricity &amp; Magnetism — Lecture Notes</span>
-        <a href="em-notes.pdf">View PDF →</a>
-      </li>
-      <li class="resource-item">
-        <span class="title">Waves &amp; Optics — Practice Problems</span>
-        <a href="waves-problems.pdf">View PDF →</a>
-      </li>
-    </ul>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Your Name
-  </footer>
-
 </div>
 
 <script>
