@@ -72,8 +72,18 @@
   }
   .hero-text{flex:1 1 auto; min-width:0;}
   h1{font-size:1.5rem; margin-bottom:2px;}
-  .role{color:var(--text-dim); font-size:0.92rem; margin-bottom:10px;}
+  .role{color:var(--text-dim); font-size:1.08rem; margin-bottom:14px;}
   .hero-text p{color:var(--text-dim); font-size:0.9rem;}
+  .intro-block + .intro-block{margin-top:12px;}
+  .intro-label{
+    font-size:0.68rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--orange);
+    font-weight:700;
+    display:block;
+    margin-bottom:4px;
+  }
 
   /* ---- Sections ---- */
   section{margin-top:16px; padding-top:16px; border-top:1px solid var(--rule);}
@@ -180,14 +190,25 @@
 
     <div class="hero">
       <div class="avatar-frame">
-        <img src="headshot.jpg" alt="Your Name" class="avatar">
+        <img src="headshot.jpg" alt="Christopher Spalding" class="avatar">
       </div>
       <div class="hero-text">
         <h1>Christopher Spalding</h1>
         <p class="role">Physics & Astronomy Tutor</p>
-        <p>
-          My name is Chris! I am an educator with expertise in Physics and Astrophysics. I earned my Ph.D. in Planetary Astrophysics from Caltech (2018), and since 2022 I have taught high school Physics & Astronomy at The Commonwealth School in Boston. Sharing and communicating science has been my life's passion, and I am always excited to work with students to improve their understanding and tackle tough topics. I can provide support, exam preparation and/or full-course instruction in AP Physics C: Mechanics and AP Physics C: Electricity & Magnetism. I am also keen to assist with university-level Physics and Astrophysics courses.
-        </p>
+
+        <div class="intro-block">
+          <span class="intro-label">About</span>
+          <p>
+            My name is Chris! I am an educator with expertise in Physics and Astrophysics. I earned my Ph.D. in Planetary Astrophysics from Caltech (2018), and since 2022 I have taught high school Physics & Astronomy at The Commonwealth School in Boston. Sharing and communicating science has been my life's passion, and I am always excited to work with students to improve their understanding and tackle tough topics.
+          </p>
+        </div>
+
+        <div class="intro-block">
+          <span class="intro-label">What I Offer</span>
+          <p>
+            I provide support, exam preparation, and/or full-course instruction in AP Physics C: Mechanics and AP Physics C: Electricity & Magnetism. I am also keen to assist with university-level Physics and Astrophysics courses.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -253,18 +274,18 @@
         <li class="resource-item">
           <span class="title">Electricity &amp; Magnetism — Lecture Notes</span>
           <a href="em-notes.pdf">View PDF →</a>
-        <!--
         </li>
+        <!--
         <li class="resource-item">
         <span class="title">Waves &amp; Optics — Practice Problems</span>
         <a href="waves-problems.pdf">View PDF →</a>
        </li>
-          -->
+        -->
       </ul>
     </section>
 
     <footer>
-      © <span id="year"></span> Your Name
+      © <span id="year"></span> Christopher Spalding
     </footer>
 
   </div>
